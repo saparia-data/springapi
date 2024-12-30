@@ -18,14 +18,14 @@ public class HelloController {
 
     @GetMapping("/messages")
     public List<String> getMessages() {
-        System.out.println("getting all message.........");
+        System.out.println("getting all message from spring-1.........");
         return messages;
     }
 
     @PostMapping("/messages")
     public String addMessage(@RequestBody String message) {
         messages.add(message);
-        System.out.println("inserting message.........");
+        System.out.println("inserting message from spring-1.........");
         return "Message added: " + message;
     }
 
@@ -33,7 +33,7 @@ public class HelloController {
     public String updateMessage(@PathVariable int index, @RequestBody String updatedMessage) {
         if (index < messages.size()) {
             messages.set(index, updatedMessage);
-            System.out.println("updating message.........");
+            System.out.println("updating message from spring-1.........");
             return "Message updated at index " + index + ": " + updatedMessage;
         } else {
             return "Invalid index";
@@ -44,7 +44,7 @@ public class HelloController {
     public String deleteMessage(@PathVariable int index) {
         if (index < messages.size()) {
             String removedMessage = messages.remove(index);
-            System.out.println("removing message.........");
+            System.out.println("removing message from spring-1.........");
             return "Message removed at index " + index + ": " + removedMessage;
         } else {
             return "Invalid index";

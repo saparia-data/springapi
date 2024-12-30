@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/spring-1/api")
 public class HelloController {
 
     private final List<String> messages = new ArrayList<>();
